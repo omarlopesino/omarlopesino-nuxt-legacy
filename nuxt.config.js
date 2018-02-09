@@ -40,6 +40,7 @@ var config = {
     }
   },
   modules: [
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-NKJQRR2' }],
     '@nuxtjs/font-awesome'
   ],
   /*
