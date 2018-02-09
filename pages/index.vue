@@ -90,8 +90,15 @@ export default {
           "id": "gmail",
           "url": "mailto:omarmoper@gmail.com",
           "class": "fa fa-envelope",
-          "name": "Gmail",
+          "name": "e-mail",
           "target": ""
+        },
+        {
+          "id": "linkedin",
+          "url": "https://www.linkedin.com/in/omar-mohamad-el-hassan-lopesino-ba639462/",
+          "class": "fa fa-linkedin",
+          "name": "Linkedin",
+          "target": "_blank"
         }
       ],
       skills: this.getSkills(),
