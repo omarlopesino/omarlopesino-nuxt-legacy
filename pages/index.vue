@@ -6,10 +6,10 @@
     <section class="section header">
       <div class="container has-text-centered">
         <p class="image">
-          <img src="~/assets/images/me.jpeg" class="img is-rounded photo" />
+          <img src="~/assets/images/me.jpeg" class="img is-rounded photo" alt="Omar Lopesino" title="Omar Lopesino"/>
         </p>
         <h1 class="title">Hi! I'm Omar Lopesino</h1>
-        <h2 class="subtitle">Drupal developer at <a href="//metadrop.net" title="Metadrop" class="metadrop-link" target="_blank">Metadrop.</a></h2>
+        <h2 class="subtitle">Drupal developer at <a aria-hidden="true" href="//metadrop.net" title="Metadrop" class="metadrop-link" target="_blank">Metadrop.</a></h2>
         <div class="content">
           <p>I'm a web developer focused in backend, building Drupal modules.</p>
           <p>I love software developing, mainly websites, REST API's for mobile applications, games...</p>
