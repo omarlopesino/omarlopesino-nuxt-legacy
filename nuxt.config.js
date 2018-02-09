@@ -5,11 +5,12 @@ var config = {
   ** Headers of the page
   */
   head: {
-    title: 'omarlopesino',
+    title: 'Omar Lopesino',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Web developer at metadrop' }
+      { name: 'author', content: "Omar lopesino"},
+      { hid: 'description', name: 'description', content: 'Drupal developer, Backend developer, PHP development, Game developer' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/circle-filled.png' },
