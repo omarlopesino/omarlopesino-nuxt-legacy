@@ -38,9 +38,9 @@ var config = {
       }
     }
   },
-//  modules: [
-//    '@nuxtjs/bulma'
-//  ],
+  modules: [
+    '@nuxtjs/font-awesome'
+  ],
   /*
    ** CSS assets. 
    */

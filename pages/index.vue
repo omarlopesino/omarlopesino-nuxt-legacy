@@ -16,12 +16,18 @@
       </div>
     </section>
     <section class="section section_skills has-text-centered">
+      <p class="title">Contact</p>
+      <div class="levels social">
+        <a v-for="contact in contacts" :key="contact.id" v-bind:target="contact.target" class="level-item social-link" v-bind:class="contact.class" v-bind:href="contact.url">
+          {{contact.name}}
+        </a>
+      </div>
       <p class="title">Skills / Interests</p>
       <div class="tile is-ancestor level-item">
         <div class="tile is-3 is-vertical is-parent is-center">
           <div class="tile is-child box">
             <ul class="skills">
-              <li v-on:click="setCurrentSkill(skill)" class="skill has-text-centered" v-bind:class="skill.id" v-for="skill in skills" :key="skill.id">
+              <li v-for="skill in skills" :key="skill.id" v-on:click="setCurrentSkill(skill)" class="skill has-text-centered" v-bind:class="skill.id">
                 #{{skill.label}}
               </li>
             </ul>
@@ -48,6 +54,36 @@ export default {
   },
   data () {
     return {
+      contacts: [
+        {
+          "id": "github",
+          "url": "//github.com/mistermoper/",
+          "class": "fa fa-github",
+          "name": "Github",
+          "target": "_blank"
+        },
+        {
+          "id": "drupal",
+          "url": "//drupal.org/u/mistermoper/",
+          "class": "fa fa-drupal",
+          "name": "Drupal",
+          "target": "_blank"
+        },
+        {
+          "id": "twitter",
+          "url": "//twitter.com/omarlopesino/",
+          "class": "fa fa-twitter",
+          "name": "Twitter",
+          "target": "_blank"
+        },
+        {
+          "id": "gmail",
+          "url": "mailto:omarmoper@gmail.com",
+          "class": "fa fa-envelope",
+          "name": "Gmail",
+          "target": ""
+        }
+      ],
       skills: this.getSkills(),
       currentSkill: this.getDefaultSkill()
     }

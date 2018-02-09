@@ -93,3 +93,17 @@ img.photo {
   margin-top: 1em;
   transition: all .5s ease;
 }
+
+.social {
+  * {
+    color: black;
+  }
+  .social-link {
+    margin-left: 1em;
+    &:before {
+      line-height: 80px;
+      font-size: 4.5em;
+      display: block;
+    }
+  }
+}
