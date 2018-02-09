@@ -26,7 +26,8 @@
         </a>
       </div>
 
-      <p class="title">Skills / Interests</p>
+      <p class="title skills-title">Skills / Interests</p>
+
       <div class="tile is-ancestor level-item">
 
         <div class="tile is-3 is-vertical is-parent is-center">
