@@ -2,6 +2,7 @@
 
 <template>
   <div>
+
     <section class="section header">
       <div class="container has-text-centered">
         <p class="image">
@@ -15,15 +16,19 @@
         </div>
       </div>
     </section>
+
     <section class="section section_skills has-text-centered">
+
       <p class="title">Contact</p>
       <div class="levels social">
         <a v-for="contact in contacts" :key="contact.id" v-bind:target="contact.target" class="level-item social-link" v-bind:class="contact.class" v-bind:href="contact.url">
           {{contact.name}}
         </a>
       </div>
+
       <p class="title">Skills / Interests</p>
       <div class="tile is-ancestor level-item">
+
         <div class="tile is-3 is-vertical is-parent is-center">
           <div class="tile is-child box">
             <ul class="skills">
@@ -33,6 +38,7 @@
             </ul>
           </div>
         </div>
+
         <div class="tile is-parent is-3 is-center">
             <div class="tile is-child box skill-description">
               <p class="title">{{currentSkill.label}}</p>
@@ -40,8 +46,11 @@
               </div>
             </div>
         </div>
+
       </div>
+
     </section>
+
   </div>
 </template>
 
