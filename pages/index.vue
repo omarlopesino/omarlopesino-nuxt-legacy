@@ -167,7 +167,7 @@ export default {
         {
           "id": "unity3d",
           "label": "Unity 3d",
-          "description": "<p>In my free time I like develop games with Unity3D game engine. Focused on C# unity scripts.</p>"
+          "description": "<p>In my free time I like develop games with Unity3D game engine. Focused on C# unity scripts to define game logic.</p>"
         },
         {
           "id": "linux",
