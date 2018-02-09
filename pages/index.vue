@@ -21,12 +21,12 @@
 
       <p class="title">Contact</p>
       <div class="levels social">
-        <v-for v-for="contact in contacts" :key="contact.id">
+        <span v-for="contact in contacts" :key="contact.id">
           <a aria-hidden="true" v-bind:target="contact.target" class="level-item social-link" v-bind:class="contact.class" v-bind:href="contact.url">
             {{contact.name}}
           </a>
           <span v-html="contact.suffix"></span>
-        </v-for>
+        </span>
       </div>
 
       <p class="title skills-title">Skills / Interests</p>
