@@ -161,7 +161,7 @@ export default {
         {
           "id": "drupal",
           "label": "Drupal",
-          "description": "<p>I use drupal at my work for custom / contrib module development and site building. Contributing allways is possible! See my <a target='_blank' href='//drupal.org/u/mistermoper'>profile</a>."
+          "description": "<p>I use drupal at my work for custom / contrib module development and site building. Contributing allways is possible!"
             + "I sometimes answer question at drupal.stackexchange.com to help others acquire knowledge.</p>"
         },
         {
