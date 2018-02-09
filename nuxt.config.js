@@ -52,11 +52,4 @@ var config = {
   ]
 }
 
-// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
-if (process.env.DEPLOY_ENV === 'GH_PAGES') {
-  config.router = {
-    base: '/omarlopesino/'
-  }
-}
-
 module.exports = config;
