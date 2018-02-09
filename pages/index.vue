@@ -21,9 +21,12 @@
 
       <p class="title">Contact</p>
       <div class="levels social">
-        <a v-for="contact in contacts" :key="contact.id" v-bind:target="contact.target" class="level-item social-link" v-bind:class="contact.class" v-bind:href="contact.url">
-          {{contact.name}}
-        </a>
+        <v-for v-for="contact in contacts" :key="contact.id">
+          <a aria-hidden="true" v-bind:target="contact.target" class="level-item social-link" v-bind:class="contact.class" v-bind:href="contact.url">
+            {{contact.name}}
+          </a>
+          <span v-html="contact.suffix"></span>
+        </v-for>
       </div>
 
       <p class="title skills-title">Skills / Interests</p>
@@ -70,35 +73,40 @@ export default {
           "url": "//github.com/mistermoper/",
           "class": "fa fa-github",
           "name": "Github",
-          "target": "_blank"
+          "target": "_blank",
+          "suffix": ""
         },
         {
           "id": "drupal",
           "url": "//drupal.org/u/mistermoper/",
           "class": "fa fa-drupal",
           "name": "Drupal",
-          "target": "_blank"
+          "target": "_blank",
+          "suffix": ""
         },
         {
           "id": "twitter",
           "url": "//twitter.com/omarlopesino/",
           "class": "fa fa-twitter",
           "name": "Twitter",
-          "target": "_blank"
+          "target": "_blank",
+          "suffix": ""
         },
         {
           "id": "gmail",
           "url": "mailto:omarmoper@gmail.com",
           "class": "fa fa-envelope",
           "name": "e-mail",
-          "target": ""
+          "target": "",
+          "suffix": "<noscript>Sorry, you need Javascript on to email me.</noscript>"
         },
         {
           "id": "linkedin",
           "url": "https://www.linkedin.com/in/omar-mohamad-el-hassan-lopesino-ba639462/",
           "class": "fa fa-linkedin",
           "name": "Linkedin",
-          "target": "_blank"
+          "target": "_blank",
+          "suffix": ""
         }
       ],
       skills: this.getSkills(),
