@@ -12,7 +12,7 @@ var config = {
       { hid: 'description', name: 'description', content: 'Web developer at metadrop' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/shape_circle.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' }
     ]
   },
