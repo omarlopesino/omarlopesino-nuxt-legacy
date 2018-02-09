@@ -73,69 +73,74 @@ export default {
         {
           "id": "php",
           "label": "PHP",
-          "description": "<p>Desarrollo de código en PHP para cumplir con la lógica de negocio.</p>"
-          + "<p>Uso de patrones de desarrollo.</p>"
-          + "<p> PSR4 </p>"
+          "description": "<p>Web development written in PHP (drupal modules) to meet business logic.</p>"
+          + "<p>Design patterns.</p>"
+          + "<p> PSR4. </p>"
         },
         {
           "id": "css",
           "label": "CSS",
-          "description": "<p>CSS</p>"
+          "description": "<p>Web theming with CSS. Responsive design.</p>"
         },
         {
           "id": "scss",
           "label": "SCSS",
-          "description": "<p>CSS</p>"
+          "description": "<p>Good frontend practices using SCSS.</p>"
         },
         {
           "id": "javascript",
           "label": "JS",
-          "description": "<p>CSS</p>"
+          "description": "<p>I use javascript to build client side features.</p>"
+        },
+        {
+          "id": "mysql",
+          "label": "Mysql",
+          "description": "<p>Use mysql to host and query web data.</p>"
         },
         {
           "id": "behat",
           "label": "Behat",
-          "description": "<p>CSS</p>"
+          "description": "<p>I write behat tests which meet client specs. These are made before feature development to check the development executing the test.</p>"
         },
         {
           "id": "bdd",
           "label": "BDD",
-          "description": "<p>CSS</p>"
+          "description": "<p>As a developer I want to make tests based on client spec To ensure project quality. See <a target='blank' href='//en.wikipedia.org/wiki/Behavior-driven_development'>more</a></p>"
         },
         {
           "id": "Angular",
           "label": "Angular",
-          "description": "<p>CSS</p>"
+          "description": "<p>Powerful client side applications handling business data in frontend.</p>"
         },
         {
           "id": "drupal",
           "label": "Drupal",
-          "description": "<p>CSS</p>"
+          "description": "<p>I use drupal at my work for custom / contrib module development and site building. Contributing allways is possible! See my <a target='_blank' href='//drupal.org/u/mistermoper'>profile</a></p>"
         },
         {
           "id": "unity3d",
           "label": "Unity 3d",
-          "description": "<p>CSS</p>"
+          "description": "<p>In my free time I like develop games with Unity3D game engine. Focused on C# unity scripts.</p>"
         },
         {
           "id": "linux",
           "label": "Linux",
-          "description": "<p>CSS</p>"
+          "description": "<p>I like use linux operative systems for web development.</p>"
         },
         {
           "id": "restful",
           "label": "Rest",
-          "description": "<p>CSS</p>"
+          "description": "<p>Using drupal as a backend service I build rest API's that can be used for ev</p>"
         },
         {
           "id": "git",
           "label": "Git",
-          "description": "<p>CSS</p>"
+          "description": "<p>Version control using Git.</p>"
         },
         {
           "id": "composer",
           "label": "Composer",
-          "description": "<p>CSS</p>"
+          "description": "<p>PHP Libraries management with composer.</p>"
         }
       ]
     }
