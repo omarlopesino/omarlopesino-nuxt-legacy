@@ -72,21 +72,24 @@ img.photo {
 }
 
 .skills {
-  margin-top: 1em;
-
   .skill {
     font-weight: bold;
-    /*display: inline-block;*/
+    display: inline-block;
     border-radius: 5px;
     padding: .5em;
     background-color: #e0de78;
     color:black;
-    /*color: white;*/
     margin-right: 1em;
+    margin-top: .5em;
     color: black;
 
     &:hover, &:active {
-      background-color: white;
+      background-color: lightgray;
     }
   }
+}
+
+.skill-description .content {
+  margin-top: 1em;
+  transition: all .5s ease;
 }
