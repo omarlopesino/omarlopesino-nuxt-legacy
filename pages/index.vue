@@ -12,7 +12,7 @@
         <h2 class="subtitle">Drupal developer at <a href="//metadrop.net" title="Metadrop" class="metadrop-link" target="_blank">Metadrop.</a></h2>
         <div class="content">
           <p>I'm a web developer focused in backend, building Drupal modules.</p>
-          <p>I love develop software, mainly websites, REST API's for mobile applications, games...</p>
+          <p>I love software developing, mainly websites, REST API's for mobile applications, games...</p>
         </div>
       </div>
     </section>
