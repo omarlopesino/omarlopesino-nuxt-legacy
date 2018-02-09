@@ -9,6 +9,10 @@
         </p>
         <h1 class="title">Hi! I'm Omar Lopesino</h1>
         <h2 class="subtitle">Drupal developer at <a href="//metadrop.net" title="Metadrop" class="metadrop-link" target="_blank">Metadrop.</a></h2>
+        <div class="content">
+          <p>I'm a web developer focused in backend, building Drupal modules in my work.</p>
+          <p>I love develop software, mainly websites, REST API's for mobile applications, games...</p>
+        </div>
       </div>
     </section>
     <section class="section section_skills has-text-centered">
