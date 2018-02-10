@@ -132,6 +132,12 @@ export default {
     getSkills () {
       return [
         {
+          "id": "drupal",
+          "label": "Drupal",
+          "description": "<p>I use drupal at my work for custom / contrib module development and site building. Contributing allways is possible!"
+            + "I sometimes answer question at drupal.stackexchange.com to help others acquire knowledge.</p>"
+        },
+        {
           "id": "php",
           "label": "PHP",
           "description": "<p>Web development written in PHP (drupal modules) to meet business logic.</p>"
@@ -172,12 +178,6 @@ export default {
           "id": "Angular",
           "label": "Angular",
           "description": "<p>Powerful client side applications handling business data in frontend.</p>"
-        },
-        {
-          "id": "drupal",
-          "label": "Drupal",
-          "description": "<p>I use drupal at my work for custom / contrib module development and site building. Contributing allways is possible!"
-            + "I sometimes answer question at drupal.stackexchange.com to help others acquire knowledge.</p>"
         },
         {
           "id": "unity3d",
