@@ -20,7 +20,8 @@ export default {
 </script>
 
 <style lang="scss">
-      .skill {
+  .skill {
+    cursor: pointer;
     font-weight: bold;
     display: inline-block;
     border-radius: 5px;
