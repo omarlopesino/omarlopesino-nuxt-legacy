@@ -1,6 +1,16 @@
 /* nuxt.config.js */
 
 var config = {
+  plugins: ['~plugins/vue-lazyload'],
+  /**
+   * Environment variables
+   */
+  env: {
+    // your JSON API server URL :
+    jsonApiServer: 'http://api.omarlopesino.me',
+    jsonApiPrefix: 'api',
+    portfolioUserUid: 'b36ae6be-e963-4bd0-b0c5-d4fe24b4cc2b'
+  },
   /*
   ** Headers of the page
   */
@@ -26,10 +36,14 @@ var config = {
   ** Build configuration
   */
   build: {
+    vendor: ['axios', 'waterwheel', 'jsonapi-parse'],
     /*
     ** Run ESLint on save
     */
     extend (config, { isDev, isClient }) {
+      // disable uglify, does not support ES6 -_-
+      config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
+
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
