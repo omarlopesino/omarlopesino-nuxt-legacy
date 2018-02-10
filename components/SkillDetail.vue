@@ -1,5 +1,5 @@
 <template>
-  <div class="skill-description">
+  <div class="skill-detail">
     <p class="title">{{skill.label}}</p>
     <div class="content" v-html="skill.description">
     </div>
@@ -15,3 +15,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  
+  .skill-detail {
+    .content {
+      margin-top: 1em;
+      transition: all .5s ease;
+    }
+  }
+</style>

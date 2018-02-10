@@ -62,7 +62,11 @@ img.photo {
   margin-top: .5em;
 }
 
-.skill-description .content {
-  margin-top: 1em;
-  transition: all .5s ease;
+.skill-list {
+  display: block;
+}
+
+
+.hide {
+  display: none !important;
 }

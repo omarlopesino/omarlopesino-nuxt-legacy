@@ -27,8 +27,8 @@
           </div>
         </div>
 
-        <div class="tile is-parent is-3 is-center">
-          <skill-detail :skill="currentSkill" class="tile is-child box"></skill-detail>
+        <div class="tile is-parent is-3 is-center skill-list">
+          <skill-detail  v-for="skill in skills"  :skill="skill" :key="skill.id" class="tile is-child box" :class="skillClassVisibility(skill)"> </skill-detail>
         </div>
 
       </div>
@@ -108,6 +108,9 @@ export default {
     }
   },
   methods: {
+    skillClassVisibility: function(skill) {
+      return skill.id != this.currentSkill.id ? 'hide' : 'show';
+    },
     getDefaultSkill() {
       return this.getSkills()[0];
     },
