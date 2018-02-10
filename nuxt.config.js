@@ -40,9 +40,18 @@ var config = {
       }
     }
   },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://omarlopesino.me',
+    cacheTime: 1000 * 60 * 15,
+    generate: false, // Enable me when using nuxt generate
+    exclude: [],
+    routes: []
+  },
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-NKJQRR2' }],
-    '@nuxtjs/font-awesome'
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/sitemap'
   ],
   /*
    ** CSS assets. 
