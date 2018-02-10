@@ -1,5 +1,5 @@
 <template>
-  <li class="skill has-text-centered" v-bind:class="skill.id" v-on:click="emitSelect">
+  <li class="skill has-text-centered unselectable" v-bind:class="skill.id" v-on:click="emitSelect">
     #{{skill.label}}
   </li>
 </template>
