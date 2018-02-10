@@ -39,11 +39,12 @@
 </template>
 
 <script>
-import Skill from '../components/Skill';
-import SkillDetail from '../components/SkillDetail';
-import ContactLink from '../components/ContactLink';
-import PersonalInfo from '../components/PersonalInfo';
-
+import Skill from '~/components/Skill';
+import SkillDetail from '~/components/SkillDetail';
+import ContactLink from '~/components/ContactLink';
+import PersonalInfo from '~/components/PersonalInfo';
+import {getUserInfo} from '~/lib/api';
+import axios from 'axios';
 export default {
   components: {
     Skill,
@@ -53,14 +54,6 @@ export default {
   },
   data () {
     return {
-      personalInfo: {
-        name: 'Omar Lopesino',
-        img: '~/assets/images/me.jpeg',
-        title: "Hi! I'm Omar Lopesino",
-        subtitle: 'Drupal developer at <a aria-hidden="true" href="//metadrop.net" title="Metadrop" class="metadrop-link" target="_blank">Metadrop.</a>',
-        content: "<p>I'm a web developer focused in backend, building Drupal modules.</p>"
-          + "<p>I love software developing, mainly websites, REST API's for mobile applications, games...</p>"
-      },
       contacts: [
         {
           "id": "github",
@@ -203,6 +196,18 @@ export default {
         }
       ]
     }
+  },
+  async asyncData() {
+    var userInfo = await getUserInfo(process.env.portfolioUserUid);
+    return {
+      personalInfo: {
+        name: userInfo.user_name,
+        img: userInfo.user_image.url,
+        title: userInfo.user_title,
+        subtitle: userInfo.user_subtitle.value,
+        content: userInfo.user_description.value
+      }
+    };
   }
 }
 </script>

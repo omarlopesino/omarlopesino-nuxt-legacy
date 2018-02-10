@@ -1,7 +1,9 @@
 <template>
   <div class="container has-text-centered">
     <p class="image">
-      <img src="~/assets/images/me.jpeg" class="img is-rounded photo" :alt="info.name" :title="info.name"/>
+      <img v-lazy="info.img" class="img is-rounded photo" :alt="info.name" :title="info.name"/>
+      <!-- Default image if JS is missing !-->
+      <noscript><img src="~/assets/images/me.jpeg" class="img is-rounded photo" :alt="info.name" :title="info.name"/></noscript>
     </p>
     <h1 class="title">{{info.title}}</h1>
     <h2 class="subtitle" v-html="info.subtitle"></h2>
