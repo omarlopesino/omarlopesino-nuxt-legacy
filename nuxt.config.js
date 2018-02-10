@@ -44,7 +44,7 @@ var config = {
     path: '/sitemap.xml',
     hostname: 'https://omarlopesino.me',
     cacheTime: 1000 * 60 * 15,
-    generate: false, // Enable me when using nuxt generate
+    generate: process.env.DEPLOY_ENV === 'GH_PAGES', // Enable me when using nuxt generate
     exclude: [],
     routes: []
   },
