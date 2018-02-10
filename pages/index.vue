@@ -22,7 +22,7 @@
         <div class="tile is-3 is-vertical is-parent is-center">
           <div class="tile is-child box">
             <ul class="skills">
-              <skill v-for="skill in skills" :key="skill.id" v-on:click="setCurrentSkill(skill)" :skill="skill"></skill>
+              <skill v-for="skill in skills" :key="skill.id" v-on:select="setCurrentSkill(skill)" :skill="skill"></skill>
             </ul>
           </div>
         </div>

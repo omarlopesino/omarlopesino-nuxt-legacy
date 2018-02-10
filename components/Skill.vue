@@ -1,5 +1,5 @@
 <template>
-  <li class="skill has-text-centered" v-bind:class="skill.id">
+  <li class="skill has-text-centered" v-bind:class="skill.id" v-on:click="emitSelect">
     #{{skill.label}}
   </li>
 </template>
@@ -10,6 +10,11 @@ export default {
     skill: {type: Object, default: function() {
       return {};
     }}
+  },
+  methods: {
+    emitSelect: function() {
+      this.$emit('select');
+    }
   }
 }
 </script>
