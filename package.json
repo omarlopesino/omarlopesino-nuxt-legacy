@@ -21,6 +21,7 @@
     "@nuxtjs/bulma": "^1.1.0",
     "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/google-tag-manager": "^1.1.0",
+    "@nuxtjs/sitemap": "0.0.3",
     "bulma": "^0.6.2",
     "nuxt": "^1.0.0"
   },
