@@ -44,30 +44,17 @@ section.header {
     background: rgba(255, 255, 255, 0.5);
   }
 
-  .title {
-    margin-top: .3em;
-  }
-
-  .container {
-    position: relative;
-    .title, .subtitle , .content p {
-      color: white;
-    }
-  }
-
-  .skills-container {
-    margin-bottom: 1em;
-  }
 }
 
 .section.section_skills{
   background-color: lightgray;
 }
 
+// @WORKAROUND: if personal info image style is no set before render,
+// the image is not resized correctly!
 img.photo {
   display: inline-block;
   width: 128px;
-  border-radius: 50%;
   max-width: 100%;
 }
 
@@ -75,39 +62,7 @@ img.photo {
   margin-top: .5em;
 }
 
-.skills {
-  .skill {
-    font-weight: bold;
-    display: inline-block;
-    border-radius: 5px;
-    padding: .5em;
-    background-color: #e0de78;
-    color:black;
-    margin-right: 1em;
-    margin-top: .5em;
-    color: black;
-
-    &:hover, &:active {
-      background-color: lightgray;
-    }
-  }
-}
-
 .skill-description .content {
   margin-top: 1em;
   transition: all .5s ease;
-}
-
-.social {
-  * {
-    color: black;
-  }
-  .social-link {
-    margin-left: 1em;
-    &:before {
-      line-height: 80px;
-      font-size: 4.5em;
-      display: block;
-    }
-  }
 }

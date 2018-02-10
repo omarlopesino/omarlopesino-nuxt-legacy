@@ -4,29 +4,15 @@
   <div>
 
     <section class="section header">
-      <div class="container has-text-centered">
-        <p class="image">
-          <img src="~/assets/images/me.jpeg" class="img is-rounded photo" alt="Omar Lopesino" title="Omar Lopesino"/>
-        </p>
-        <h1 class="title">Hi! I'm Omar Lopesino</h1>
-        <h2 class="subtitle">Drupal developer at <a aria-hidden="true" href="//metadrop.net" title="Metadrop" class="metadrop-link" target="_blank">Metadrop.</a></h2>
-        <div class="content">
-          <p>I'm a web developer focused in backend, building Drupal modules.</p>
-          <p>I love software developing, mainly websites, REST API's for mobile applications, games...</p>
-        </div>
-      </div>
+      <personal-info :info="personalInfo"></personal-info>
     </section>
 
     <section class="section section_skills has-text-centered">
 
       <p class="title">Contact</p>
       <div class="levels social">
-        <span v-for="contact in contacts" :key="contact.id">
-          <a aria-hidden="true" v-bind:target="contact.target" class="level-item social-link" v-bind:class="contact.class" v-bind:href="contact.url">
-            {{contact.name}}
-          </a>
-          <span v-html="contact.suffix"></span>
-        </span>
+        <contact-link v-for="contact in contacts" :key="contact.id" :contact="contact">
+        </contact-link>
       </div>
 
       <p class="title skills-title">Skills / Interests</p>
@@ -36,19 +22,13 @@
         <div class="tile is-3 is-vertical is-parent is-center">
           <div class="tile is-child box">
             <ul class="skills">
-              <li v-for="skill in skills" :key="skill.id" v-on:click="setCurrentSkill(skill)" class="skill has-text-centered" v-bind:class="skill.id">
-                #{{skill.label}}
-              </li>
+              <skill v-for="skill in skills" :key="skill.id" v-on:click="setCurrentSkill(skill)" :skill="skill"></skill>
             </ul>
           </div>
         </div>
 
         <div class="tile is-parent is-3 is-center">
-            <div class="tile is-child box skill-description">
-              <p class="title">{{currentSkill.label}}</p>
-              <div class="content" v-html="currentSkill.description">
-              </div>
-            </div>
+          <skill-detail :skill="currentSkill" class="tile is-child box"></skill-detail>
         </div>
 
       </div>
@@ -59,14 +39,28 @@
 </template>
 
 <script>
-import Navbar from '../components/Navbar'
+import Skill from '../components/Skill';
+import SkillDetail from '../components/SkillDetail';
+import ContactLink from '../components/ContactLink';
+import PersonalInfo from '../components/PersonalInfo';
 
 export default {
   components: {
-    Navbar
+    Skill,
+    SkillDetail,
+    ContactLink,
+    PersonalInfo
   },
   data () {
     return {
+      personalInfo: {
+        name: 'Omar Lopesino',
+        img: '~/assets/images/me.jpeg',
+        title: "Hi! I'm Omar Lopesino",
+        subtitle: 'Drupal developer at <a aria-hidden="true" href="//metadrop.net" title="Metadrop" class="metadrop-link" target="_blank">Metadrop.</a>',
+        content: "<p>I'm a web developer focused in backend, building Drupal modules.</p>"
+          + "<p>I love software developing, mainly websites, REST API's for mobile applications, games...</p>"
+      },
       contacts: [
         {
           "id": "github",
