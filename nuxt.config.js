@@ -8,6 +8,7 @@ var config = {
     title: 'Omar Lopesino',
     meta: [
       { charset: 'utf-8' },
+      { name: 'google-site-verification', content: 'UaVWjk2BxbeZor5BO5tOUFlPcahmz5f94sgQOCBViMY'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'author', content: "Omar lopesino"},
       { hid: 'description', name: 'description', content: 'Drupal developer, Backend developer, PHP development, Game developer' }
