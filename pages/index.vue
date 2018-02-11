@@ -34,7 +34,6 @@
       </div>
 
     </section>
-
   </div>
 </template>
 
@@ -52,18 +51,9 @@ export default {
     ContactLink,
     PersonalInfo
   },
-  data () {
-    return {
-      skills: this.getSkills(),
-      currentSkill: this.getDefaultSkill()
-    }
-  },
   methods: {
     skillClassVisibility: function(skill) {
       return skill.id != this.currentSkill.id ? 'hide' : 'show';
-    },
-    getDefaultSkill() {
-      return this.getSkills()[0];
     },
     getSkillByName(skill_name) {
       var skill_selected = null, skills = this.getSkills();
@@ -78,86 +68,16 @@ export default {
       this.currentSkill = this.getSkillByName(skill.id);
     },
     getSkills () {
-      return [
-        {
-          "id": "drupal",
-          "label": "Drupal",
-          "description": "<p>I use drupal at my work for custom / contrib module development and site building. Contributing allways is possible!"
-            + "I sometimes answer question at drupal.stackexchange.com to help others acquire knowledge.</p>"
-        },
-        {
-          "id": "php",
-          "label": "PHP",
-          "description": "<p>Web development written in PHP (drupal modules) to meet business logic.</p>"
-          + "<p>Design patterns.</p>"
-          + "<p> PSR4. </p>"
-        },
-        {
-          "id": "css",
-          "label": "CSS",
-          "description": "<p>Web theming with CSS. Responsive design.</p>"
-        },
-        {
-          "id": "scss",
-          "label": "SCSS",
-          "description": "<p>Good frontend practices using SCSS.</p>"
-        },
-        {
-          "id": "javascript",
-          "label": "JS",
-          "description": "<p>I use javascript to build client side features.</p>"
-        },
-        {
-          "id": "mysql",
-          "label": "Mysql",
-          "description": "<p>Use mysql to host and query web data.</p>"
-        },
-        {
-          "id": "behat",
-          "label": "Behat",
-          "description": "<p>I write behat tests which meet client specs. These are made before feature development to check the development executing the test.</p>"
-        },
-        {
-          "id": "bdd",
-          "label": "BDD",
-          "description": "<p>As a developer I want to make tests based on client spec To ensure project quality. See <a target='blank' href='//en.wikipedia.org/wiki/Behavior-driven_development'>more</a></p>"
-        },
-        {
-          "id": "Angular",
-          "label": "Angular",
-          "description": "<p>Powerful client side applications handling business data in frontend.</p>"
-        },
-        {
-          "id": "unity3d",
-          "label": "Unity 3d",
-          "description": "<p>In my free time I like develop games with Unity3D game engine. Focused on C# unity scripts to define game logic.</p>"
-        },
-        {
-          "id": "linux",
-          "label": "Linux",
-          "description": "<p>I like use linux operative systems for web development.</p>"
-        },
-        {
-          "id": "restful",
-          "label": "Rest",
-          "description": "<p>Using drupal as a backend service I build rest API's that can be used for ev</p>"
-        },
-        {
-          "id": "git",
-          "label": "Git",
-          "description": "<p>Version control using Git.</p>"
-        },
-        {
-          "id": "composer",
-          "label": "Composer",
-          "description": "<p>PHP Libraries management with composer.</p>"
-        }
-      ]
+      return this.skills;
     }
   },
   async asyncData() {
     var userInfo = await getUserInfo(process.env.portfolioUserUid);
+    console.log(userInfo.user_skills);
     return {
+      skills: userInfo.user_skills,
+      currentSkill: userInfo.user_skills[0],
+      userInfo: userInfo,
       personalInfo: {
         name: userInfo.user_name,
         img: userInfo.user_image.url,

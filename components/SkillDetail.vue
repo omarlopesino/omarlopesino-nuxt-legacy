@@ -1,7 +1,7 @@
 <template>
   <div class="skill-detail">
     <p class="title">{{skill.label}}</p>
-    <div class="content" v-html="skill.description">
+    <div class="content" v-html="skill.description.value">
     </div>
   </div>
 </template>
