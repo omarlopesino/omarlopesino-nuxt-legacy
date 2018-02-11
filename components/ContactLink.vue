@@ -1,9 +1,11 @@
 <template>
   <div class="contact">
-    <a aria-hidden="true" v-bind:target="contact.target" class="level-item social-link" v-bind:class="contact.class" v-bind:href="contact.url">
-      {{contact.name}}
+    <a aria-hidden="true" v-bind:target="contact.options.attributes.target" class="level-item social-link" v-bind:class="contact.options.attributes.class" v-bind:href="contact.uri">
+      {{contact.title}}
     </a>
-    <span v-html="contact.suffix"></span>
+    <noscript v-if="contact.uri.indexOf('mailto') == 0">
+      Sorry, you need Javascript on to email me.
+    </noscript>
   </div>
 </template>
 

@@ -54,48 +54,6 @@ export default {
   },
   data () {
     return {
-      contacts: [
-        {
-          "id": "github",
-          "url": "//github.com/mistermoper/",
-          "class": "fa fa-github",
-          "name": "Github",
-          "target": "_blank",
-          "suffix": ""
-        },
-        {
-          "id": "drupal",
-          "url": "//drupal.org/u/mistermoper/",
-          "class": "fa fa-drupal",
-          "name": "Drupal",
-          "target": "_blank",
-          "suffix": ""
-        },
-        {
-          "id": "twitter",
-          "url": "//twitter.com/omarlopesino/",
-          "class": "fa fa-twitter",
-          "name": "Twitter",
-          "target": "_blank",
-          "suffix": ""
-        },
-        {
-          "id": "gmail",
-          "url": "mailto:omarmoper@gmail.com",
-          "class": "fa fa-envelope",
-          "name": "e-mail",
-          "target": "",
-          "suffix": "<noscript>Sorry, you need Javascript on to email me.</noscript>"
-        },
-        {
-          "id": "linkedin",
-          "url": "https://www.linkedin.com/in/omar-mohamad-el-hassan-lopesino-ba639462/",
-          "class": "fa fa-linkedin",
-          "name": "Linkedin",
-          "target": "_blank",
-          "suffix": ""
-        }
-      ],
       skills: this.getSkills(),
       currentSkill: this.getDefaultSkill()
     }
@@ -206,7 +164,8 @@ export default {
         title: userInfo.user_title,
         subtitle: userInfo.user_subtitle.value,
         content: userInfo.user_description.value
-      }
+      },
+      contacts: userInfo.user_social_links
     };
   }
 }
