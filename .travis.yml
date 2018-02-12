@@ -1,23 +1,20 @@
-#.travis.yml
-
 language: node_js
 node_js:
-  - "9.2"
-
+- '9.2'
 branches:
   only:
-    - master
-
+  - master
 after_success:
-  - npm run generate:gh-pages
-
+- npm run generate:gh-pages
 before_deploy:
-  - cd dist
-
+- cd dist
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  github-token: "$GITHUB_TOKEN"
   keep-history: true
   on:
     branch: gh-pages
+env:
+  matrix:
+    secure: nj+iMmqrSL9SA+DnxcUTd0wOO5ExkI2yk4xYRkxCyVixd1vq9+vJ2T42JfxjVNtAMWwns08jeenCPtQsd5VynnY/DkqRQzm9KBOWBiGX2gHzf+czTbIpFfLH77bwAWKnq8soOowPxWS5uec36BSM9ySYNu1KUJ/lv4zh14s6UAtQRB5doKrEyydYVNM4b9Ayu+oi/ii+hwnv3t0vxRntLZx9A4x4qVY3xq8z2KVAXsmtqeLz47FtiUZt9a++AfseuykTQ3BjLy/EucmwuSiI+5Vk2xY77SYTrYoi8KK7CNklc+1peXN7cPJM4p3JbvvpfLFPVkOvn0ab1X+MZT7E9JFie+NZtm56OZF5zKSukT1Y8rd14jdhz6swFNfeHTM/RMPDDIUAVetjnmLSYRI6ILj9qYCIMGvFEAbJZf+xN+8k4Jt6NnZ6odw1ERNMZ0POpfmf7fcZwIzrvVaGyNqeGw1st64u+wkzHKhMRXrF7tLVnx5PJKYianSLxcnqjNOaRqVEifoqi40z+L5Z11JiOltDqEHVzozkm+Gg4nB/Ou6VDHqx+JW7PkV4EtmYesaU8copj8f2NbMQamrNgyv1I62CMqxQc69usRyJC639jymfiSakKWizsIgEjscGt0Cv+r+zfAQgK47q8q2BC0FlrZ5rr3PW3YjvsQ6J5XXjuUY=
