@@ -4,17 +4,15 @@ node_js:
 branches:
   only:
   - master
-after_success:
+
+script:
 - npm run generate:gh-pages
-before_deploy:
-- cd dist
+
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: "$GITHUB_TOKEN"
+  github-token: $github_token
   keep-history: true
+  local_dir: dist
   on:
     branch: gh-pages
-env:
-  global:
-    secure: cEx6j9AudYyTix1yQKZ+IEdjcVk/bynxFrxiCFKvPzT2wQFhW6Yj1Mrzy3lf92O/CA0maWMe28HGsVHVWqMZ/hWJB1C7mo58YmJWWwTehL34jdjRvMxN+BDS2kmZqeNFRM3cmlifLYITTA1oxwctdAN6LQ1DMa2WqMSZ/KFwSN+vOQMjNfS0WuQcwWTmUqyoXcaKzSnd8Gd7KKhgGYh0vPr00/ZH1AFVN0++xGM3d2mqBhBx/DQVYKJiaPyxA4Zss1aQzwfAkEMVIpW0b8EK5D0sZRj9P3BmU6k0Vi2/vMDAHYxbSG4GyBz+5rDFc0RTHDFACoIfLvckR5tJaAA3bjyoiEYaKMa8IHMLufWqjf/RI8Hc2Uspcu9bWAqQnDsE/fikUBOfItkBq7XPoIxFGxB7vIYDyTsqX7x0mIK1idIceyP9FzYRqL4WO1yLWTOKKQb+k/28lSrLYXvD7rK7pZYdPnO4DmNo4bxkD7nirRbEYYnHo1x5I1xp275ILE47jc7pR9l7tsy7c6AcIX0yvUsypAm18JL7OJ0G1eUcBxmxk6RQmteAVwHEQThh6PiWafRwBOgWL8djy7SYVi54EAcKcmIziv1kHuvHQ1A9tFJ5cAko8LkNM4dQ3Ucx5K6EXUu6UKxjLQUGAVp8AdAUrwB8m0x6dEaLdlMVc4gfiFg=
