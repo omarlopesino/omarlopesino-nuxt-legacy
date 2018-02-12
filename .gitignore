@@ -12,3 +12,6 @@ dist
 
 # Nbproject
 nbproject
+
+# Static sitemap.xml
+static/sitemap.xml
