@@ -7,12 +7,8 @@ branches:
 
 script:
 - npm run generate:gh-pages
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $github_token
-  keep-history: true
-  local_dir: dist
-  on:
-    branch: gh-pages
+- cd dist
+- git init
+- git add .
+- git commit -m "Deploy to Github Pages"
+- git push --force --quiet "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git" master:gh-pages > /dev/null 2>&1
