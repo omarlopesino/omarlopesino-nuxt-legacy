@@ -7,7 +7,10 @@
         </ul>
         <div class="user-input">
           <label class="command-helper">></label>
-          <input ref='input' type="textfield" class="form-item command" v-model="input" v-on:keyup.enter="processResponse" autofocus>
+          <input ref='input' type="textfield" class="form-item command" v-model="input" autofocus
+            v-on:keyup.enter="processResponse"
+            v-on:keyup.up="setCommandPrevious"
+            v-on:keyup.down="setCommandNext">
         </div>
       </div>
     </div>
@@ -35,6 +38,19 @@ export default {
     };
   },
   methods: {
+    setCommandPrevious() {
+      if (this.currentCommand != -1) {
+        this.input = this.commands[this.currentCommand--];
+      }
+    },
+    setCommandNext() {
+      if (this.currentCommand != (this.commands.length -1)) {
+        this.input = this.commands[++this.currentCommand];
+      }
+      else if(this.currentCommand == (this.commands.length -1)) {
+        this.input = '';
+      }
+    },
     sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     },
@@ -75,7 +91,7 @@ export default {
     addToCommands(input) {
       this.commands.push(input);
       // Set current command.
-      this.currentCommand = this.commands.length;
+      this.currentCommand = this.commands.length -1;
     },
     getInput() {
       return this.input;
@@ -83,10 +99,22 @@ export default {
     inputFocus() {
       console.log(this.$refs.input);
       this.$refs.input.focus();
-      console.log('FOCUS');
     },
     setLastInput(input) {
       this.lastInput = input;
+    },
+    handleWithDefaultResponses(input) {
+      var processed = false;
+      switch (this.getInput()) {
+        case 'clear':
+          processed = true;
+          this.clearConsole();
+          break;
+      }
+      return processed;
+    },
+    clearConsole() {
+      this.stack = [];
     }
   }
 }
