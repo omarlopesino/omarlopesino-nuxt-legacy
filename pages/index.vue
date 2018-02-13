@@ -7,6 +7,10 @@
       <personal-info :info="personalInfo"></personal-info>
     </section>
 
+      <section class="section ask_me_anything">
+        <terminal></terminal>
+      </section>
+
     <section class="section section_skills has-text-centered">
 
       <p class="title">Contact</p>
@@ -42,6 +46,7 @@ import Skill from '~/components/Skill';
 import SkillDetail from '~/components/SkillDetail';
 import ContactLink from '~/components/ContactLink';
 import PersonalInfo from '~/components/PersonalInfo';
+import Terminal from '~/components/Terminal';
 import {getUserInfo} from '~/lib/api';
 import axios from 'axios';
 export default {
@@ -49,7 +54,8 @@ export default {
     Skill,
     SkillDetail,
     ContactLink,
-    PersonalInfo
+    PersonalInfo,
+    Terminal
   },
   methods: {
     skillClassVisibility: function(skill) {

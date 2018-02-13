@@ -25,7 +25,7 @@ var config = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/circle-filled.png' },
-      { rel: 'preload', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700', as: 'style', onload: "this.rel='stylesheet'"}
+      { rel: 'preload', href: 'https://fonts.googleapis.com/css?family=Inconsolata|Roboto+Mono|Source+Code+Pro:400,700,Ubuntu+Mono', as: 'style', onload: "this.rel='stylesheet'"},
     ]
   },
   /*
