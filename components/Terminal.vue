@@ -41,24 +41,32 @@ export default {
     async processResponse() {
       this.processing = true;
       this.storeInput();
+      if (!this.handleWithDefaultResponses()) {
+        await this.sleep(100);
+        this.processInput();
+      }
       this.input = '';
-      await this.sleep(100);
-      this.processInput();
     },
     stopProcessing() {
       this.processing = false;
     },
     // Store input where neccesary.
+    addInputToStack() {
+      this.addToStack('> ' + this.getInput());
+    },
     storeInput() {
       var input = this.getInput();
       this.setLastInput(input);
-      this.addToStack('> ' + input);
       this.addToCommands(input);
+    },
+    storeResponse(response) {
+      this.addInputToStack();
+      this.stack.push(response);
     },
     // Process input.
     processInput() {
       // @TODO: get response from API AI!
-      this.stack.push('Lorem ipsum');
+      this.storeResponse('Lorem ipsum');
       this.stopProcessing();
     },
     addToStack(message) {
