@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import {dialogFlowQuery} from '~/lib/dialogflow';
+
 export default {
   data: function() {
     return {
@@ -56,9 +58,9 @@ export default {
     },
     async processResponse() {
       this.processing = true;
+      this.addInputToStack();
       this.storeInput();
       if (!this.handleWithDefaultResponses()) {
-        await this.sleep(100);
         this.processInput();
       }
       this.input = '';
@@ -76,13 +78,15 @@ export default {
       this.addToCommands(input);
     },
     storeResponse(response) {
-      this.addInputToStack();
       this.stack.push(response);
     },
     // Process input.
-    processInput() {
+    async processInput() {
+      // @TODO: vuex!
+      var query = this.getInput();
+      var dialogFlowResponse = await dialogFlowQuery(query);
       // @TODO: get response from API AI!
-      this.storeResponse('Lorem ipsum');
+      this.storeResponse(dialogFlowResponse.getSpeech());
       this.stopProcessing();
     },
     addToStack(message) {
@@ -135,7 +139,7 @@ export default {
         .terminal-output {
           position: relative;
           left: 1em;
-          margin-top: -6px;
+          width: 29em;
           color: white;
           font-weight: bold;
           font-family: 'Ubuntu Mono';
