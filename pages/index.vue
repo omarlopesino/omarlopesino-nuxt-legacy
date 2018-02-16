@@ -48,7 +48,7 @@ import ContactLink from '~/components/ContactLink';
 import PersonalInfo from '~/components/PersonalInfo';
 import Terminal from '~/components/Terminal';
 import {getUserInfo} from '~/lib/api';
-import axios from 'axios';
+
 export default {
   components: {
     Skill,
@@ -79,7 +79,6 @@ export default {
   },
   async asyncData() {
     var userInfo = await getUserInfo(process.env.portfolioUserUid);
-    console.log(userInfo.user_skills);
     return {
       skills: userInfo.user_skills,
       currentSkill: userInfo.user_skills[0],
