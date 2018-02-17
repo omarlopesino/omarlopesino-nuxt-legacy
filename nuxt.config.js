@@ -7,7 +7,7 @@ var config = {
    */
   env: {
     // your JSON API server URL :
-    jsonApiServer: 'http://api.omarlopesino.me',
+    jsonApiServer: 'https://api.omarlopesino.me',
     jsonApiPrefix: 'api',
     portfolioUserUid: 'b36ae6be-e963-4bd0-b0c5-d4fe24b4cc2b'
   },
