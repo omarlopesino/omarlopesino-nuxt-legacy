@@ -19,6 +19,14 @@
         <span class="tab tab__title">Ask me anything!</span>
       </div>
     </div>
+    <div class="modal terminal-modal" v-on:click="modalActive = ''" :class="modalActive">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <p class="image is-16by9" v-html="modalContent">
+        </p>
+      </div>
+      <button v-on:click="modalActive = ''" class="modal-close is-large" aria-label="close"></button>
+    </div>
   </div>
 </template>
 
@@ -36,7 +44,9 @@ export default {
       commands: [],
       processing: false,
       autofocus: "",
-      currentCommand: 0
+      currentCommand: 0,
+      modalActive: "",
+      modalContent: ""
     };
   },
   methods: {
@@ -86,6 +96,10 @@ export default {
       var query = this.getInput();
       var dialogFlowResponse = await dialogFlowQuery(query);
       // @TODO: get response from API AI!
+      if (dialogFlowResponse.hasVisualContext()) {
+        this.modalContent = dialogFlowResponse.getDisplayText();
+        this.modalActive = 'is-active';
+      }
       this.storeResponse(dialogFlowResponse.getSpeech());
       this.stopProcessing();
     },
@@ -126,6 +140,9 @@ export default {
 
 <style lang="scss">
   .terminal-wrapper {
+    .terminal-modal .modal-content {
+        width: 800px;
+    }
     border-radius: 1em;
     /*Theme output / input layer.*/
     .data {
