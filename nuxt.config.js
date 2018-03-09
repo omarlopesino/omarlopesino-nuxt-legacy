@@ -68,7 +68,7 @@ var config = {
     '@nuxtjs/sitemap'
   ],
   /*
-   ** CSS assets. 
+   ** CSS assets.
    */
   css: [
     '@/node_modules/bulma/bulma.sass',
